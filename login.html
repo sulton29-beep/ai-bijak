@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Bijak - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            display: flex;
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+            min-height: 600px;
+        }
+
+        /* Left Panel (Login Form) */
+        .login-left {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo-area {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo-icon {
+            font-size: 48px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .logo-area h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .logo-area h1 span {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .tagline {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Form Styling */
+        .login-form {
+            max-width: 400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .form-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .form-subtitle {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .password-link {
+            text-align: right;
+            margin-bottom: 25px;
+        }
+
+        .password-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .password-link a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 25px;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .divider {
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 45%;
+            height: 1px;
+            background: #eee;
+        }
+
+        .divider::before {
+            left: 0;
+        }
+
+        .divider::after {
+            right: 0;
+        }
+
+        .google-btn {
+            width: 100%;
+            padding: 15px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .google-btn:hover {
+            background: #f8f8f8;
+            border-color: #ccc;
+        }
+
+        .google-btn img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .register-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Right Panel (Preview) */
+        .login-right {
+            flex: 1;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%), 
+                        url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .preview-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .preview-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .preview-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .preview-item i {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .preview-item h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .preview-item p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .login-footer {
+            margin-top: 40px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .login-container {
+                flex-direction: column;
+            }
+            
+            .login-right {
+                order: -1;
+                min-height: 300px;
+            }
+            
+            .login-left {
+                padding: 30px 20px;
+            }
+            
+            .preview-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+
+        /* Alert Message */
+        .alert {
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <!-- Left Panel - Login Form -->
+        <div class="login-left">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h1>AI <span>Bijak</span></h1>
+                <p class="tagline">Portal Pintar AI untuk Pelajar Indonesia</p>
+            </div>
+
+            <div class="login-form">
+                <h2 class="form-title">Masuk ke Akun Anda</h2>
+                <p class="form-subtitle">Masukkan email/telepon dan password untuk mengakses</p>
+                
+                <!-- Alert Message -->
+                <div id="message" class="alert"></div>
+                
+                <form id="loginForm" action="proses_login.php" method="POST">
+                    <div class="input-group">
+                        <label for="email">Email / Nomor Handphone</label>
+                        <input type="text" id="email" name="email" placeholder="Masukkan Email / No. Handphone" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Masukkan Password" required>
+                    </div>
+                    
+                    <div class="password-link">
+                        <a href="#" onclick="showResetPassword()">Lupa Password?</a>
+                    </div>
+                    
+                    <button type="submit" class="login-btn">Masuk</button>
+                </form>
+                
+                <div class="divider">Atau masuk dengan</div>
+                
+                <!-- Simulasi login Google (hanya UI) -->
+                <button class="google-btn" onclick="simulateGoogleLogin()">
+                    <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google">
+                    <span> Google </span>
+                </button>
+                
+                <div class="register-link">
+                    Belum punya akun? <a href="register.html">Daftar Sekarang</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel - Preview -->
+        <div class="login-right">
+            <h3 class="preview-title">Apa yang ada di dalam?</h3>
+            
+            <div class="preview-grid">
+                <div class="preview-item">
+                    <i class="fas fa-robot"></i>
+                    <h4>100+ AI</h4>
+                    <p>Dari ChatGPT hingga AI terbaru</p>
+                </div>
+                <div class="preview-item">
+                    <i class="fas fa-file-pdf"></i>
+                    <h4>Modul PDF</h4>
+                    <p>Penjelasan lengkap & menarik</p>
+                </div>
+                <div class="preview-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>Responsif</h4>
+                    <p>HP, Tablet, Laptop</p>
+                </div>
+                <div class="preview-item">
+                    <i class="fas fa-palette"></i>
+                    <h4>Dark Mode</h4>
+                    <p>Nyaman di mata</p>
+                </div>
+            </div>
+            
+            <div class="login-footer">
+                <p>© 2025 AI Bijak - Tugas PKM</p>
+                <p>Sistem Login dengan PHP & MySQL</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk menampilkan pesan
+        function showMessage(type, text) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = text;
+            messageDiv.className = `alert alert-${type}`;
+            messageDiv.style.display = 'block';
+            
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
+        }
+
+        // Cek jika ada parameter error/success di URL
+        window.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const error = urlParams.get('error');
+            const success = urlParams.get('success');
+            
+            if (error) {
+                showMessage('error', decodeURIComponent(error));
+            }
+            
+            if (success) {
+                showMessage('success', decodeURIComponent(success));
+            }
+        });
+
+        // Simulasi login Google (hanya untuk demo)
+        function simulateGoogleLogin() {
+            if (confirm('Fitur login dengan Google membutuhkan Firebase. Untuk demo ini, Anda akan login sebagai user demo.\n\nLanjutkan?')) {
+                showMessage('success', 'Login Google berhasil! Mengarahkan ke dashboard...');
+                setTimeout(() => {
+                    window.location.href = 'dashboard.html';
+                }, 1500);
+            }
+        }
+
+        // Simulasi reset password
+        function showResetPassword() {
+            const email = prompt('Masukkan email Anda untuk reset password:');
+            if (email) {
+                alert(`Link reset password telah dikirim ke ${email}\n\nCatatan: Fitur ini membutuhkan konfigurasi SMTP email.`);
+            }
+        }
+
+        // Form validation
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (!email || !password) {
+                e.preventDefault();
+                showMessage('error', 'Harap isi semua field!');
+                return false;
+            }
+            
+            // Lanjut submit ke proses_login.php
+        });
+    </script>
+</body>
+</html>
