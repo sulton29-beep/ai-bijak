@@ -1,6 +1,34 @@
 # AI BIJAK - Platform Pembelajaran AI
 
-![AI Bijak Banner](assets/banner.png)
+<div align="center">
+  <h1>🤖 AI BIJAK</h1>
+  <h3>Platform Pembelajaran Kecerdasan Buatan untuk Pendidikan</h3>
+</div>
+
+## 📸 Screenshots & Demo
+
+### 1. Authentication Pages
+| Login Page | Registration Page |
+|------------|-------------------|
+| <img src="assets/screenshots/login.png" width="300"> | <img src="assets/screenshots/register.png" width="300"> |
+
+### 2. Dashboard Interface
+**Dark Mode:**  
+![Dashboard Dark Mode](assets/screenshots/dashboard-dark.png)  
+*Tampilan dashboard dengan tema gelap*
+
+**Light Mode:**  
+![Dashboard Light Mode](assets/screenshots/dashboard-light.png)  
+*Tampilan dashboard dengan tema terang*
+
+### 3. AI Tools Features
+**AI Detail Modal:**  
+![AI Details Page](assets/screenshots/detail-ai.png)  
+*Modal untuk melihat detail AI tool*
+
+**PDF Generator Output:**  
+![PDF Output](assets/screenshots/pdf-output.png)  
+Hasil generate modul PDF
 
 # Tentang Proyek
 AI Bijak adalah platform pembelajaran kecerdasan buatan yang menyediakan katalog 15+ AI tools, modul PDF, dan fitur edukasi lengkap.
@@ -32,7 +60,7 @@ cd ai-bijak
 👨‍💻 Pengembang
 Sulton Hasanudin
 📧 sultonhasanudin320@gmail.com
-📱 0896-74280-380
+📱 0896-
 📅 2025
 
 📄 Lisensi
