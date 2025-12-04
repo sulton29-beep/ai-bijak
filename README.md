@@ -13,6 +13,7 @@
 | <img src="assets/screenshots/login.png" width="300"> | <img src="assets/screenshots/register.png" width="300"> |
 
 ### 2. Dashboard Interface
+
 **Dark Mode:**  
 ![Dashboard Dark Mode](assets/screenshots/dashboard-dark.png)  
 *Tampilan dashboard dengan tema gelap*
@@ -22,13 +23,14 @@
 *Tampilan dashboard dengan tema terang*
 
 ### 3. AI Tools Features
+
 **AI Detail Modal:**  
 ![AI Details Page](assets/screenshots/detail-ai.png)  
 *Modal untuk melihat detail AI tool*
 
 **PDF Generator Output:**  
 ![PDF Output](assets/screenshots/pdf-output.png)  
-Hasil generate modul PDF
+*Hasil generate modul PDF*
 
 # Tentang Proyek
 AI Bijak adalah platform pembelajaran kecerdasan buatan yang menyediakan katalog 15+ AI tools, modul PDF, dan fitur edukasi lengkap.
